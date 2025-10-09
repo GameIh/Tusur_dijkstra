@@ -6,7 +6,6 @@ from typing import Dict, Tuple, Optional, List
 def dijkstra(adj: Dict[int, Dict[int, float]],
              start: int,
              goal: int) -> Tuple[float, Optional[List[int]]]:
-    """Возвращает (дистанция, путь-список вершин) или (inf, None), если пути нет."""
     dist = {start: 0.0}
     prev = {}
     pq = [(0.0, start)]
@@ -20,7 +19,6 @@ def dijkstra(adj: Dict[int, Dict[int, float]],
         visited.add(u)
 
         if u == goal:
-            # восстановим путь
             path = [u]
             while u in prev:
                 u = prev[u]
